@@ -32,6 +32,10 @@ body {
     color: #8a8a8a;
 }
 
+.app-footer .attributions {
+    margin-top: 15px;
+}
+
 .app-footer .glyphicon-heart {
     color: #a81f80;
 
@@ -55,6 +59,10 @@ body {
 .demo a:hover,
 .demo a:focus {
     text-decoration: none;
+}
+
+.demo .share-btn {
+    margin-bottom: 5px;
 }
 
 @-webkit-keyframes heartbeat {
