@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+
+        <title></title>
+
+        <!-- Responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="mobile-web-app-capable" content="yes" />
+
+        <!-- This page is pointless to be indexed -->
+        <meta name="robots" content="noindex" />
+
+        <!-- CSS -->
+        <!-- TODO: Minify and concat all assets -->
+        <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
+        <link rel="stylesheet" href="assets/stackicons/css/stackicons-social.min.css" />
+        <style>
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+        }
+        .services {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .services ul {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            list-style: none;
+        }
+        .services li {
+            width: 105px;
+            height: 105px;
+        }
+        .services a {
+            padding: 0;
+            font-size: 72px;
+        }
+        .services a.st-icon-delicious::before {
+            background: #f0f0f0;
+        }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="services">
+            <ul class="services-list">
+                <li class="services-item services-twitter">
+                    <a class="st-icon-twitter st-icon-square" href="">Twitter</a>
+                </li>
+                <li class="services-item services-facebook">
+                    <a class="st-icon-facebook st-icon-square" href="">Facebook</a>
+                </li>
+                <li class="services-item services-googleplus">
+                    <a class="st-icon-googleplus st-icon-square" href="">Google+</a>
+                </li>
+                <li class="services-item services-reddit">
+                    <a class="st-icon-reddit st-icon-square" href="">Reddit</a>
+                </li>
+                <li class="services-item services-tumblr">
+                    <a class="st-icon-tumblr st-icon-square" href="">Tumblr</a>
+                </li>
+                <li class="services-item services-linkedin">
+                    <a class="st-icon-linkedin st-icon-square" href="">LinkedIn</a>
+                </li>
+                <li class="services-item services-pinterest">
+                    <a class="st-icon-pinterest st-icon-square" href="">Pinterest</a>
+                </li>
+                <li class="services-item services-delicious">
+                    <a class="st-icon-delicious st-icon-only st-multi-color" href=""><span></span>Delicious</a>
+                </li>
+                <li class="services-item services-email">
+                    <a class="st-icon-email st-icon-square" href="">Email</a>
+                </li>
+            </ul>
+        </div>
+
+        <script src="assets/js/share.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
+        <script>
+        var msnry = new Masonry('.services-list', {
+            itemSelector:       '.services-item',
+            isFitWidth:         true,
+            transitionDuration: 0
+        });
+        </script>
+
+    </body>
+
+</html>

@@ -41,13 +41,35 @@
         <meta name="theme-color" content="#ffffff" />
 
         <!-- CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/readable/bootstrap.min.css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+        <!-- TODO: Upgrade to socialshares -->
         <link rel="stylesheet" href="bower_components/share-buttons/build/css/share-buttons.css" />
+        <link rel="stylesheet" href="assets/prism/prism.css" />
         <link rel="stylesheet" href="assets/css/app.css" />
 
     </head>
 
     <body>
+
+        <!-- Single button -->
+        <div class="btn-group app-toc">
+            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-book"></span> Table of Contents <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Top</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#usage">Usage</a></li>
+                <li><a href="#showcase">Showcase</a></li>
+                <li><a href="#browser-support">Browser Support</a></li>
+                <li><a href="#changelog">Changelog</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#issues">Issues</a></li>
+            </ul>
+        </div>
 
         <div class="container-fluid app-container">
 
@@ -57,7 +79,7 @@
                     <img class="img-responsive" src="assets/svg/logo.svg" alt="socialshares logo" width="500" />
                 </div>
 
-                <p class="description">Lightweight share buttons for the web.</p>
+                <p class="description lead">Lightweight share buttons for the web.</p>
 
             </header>
 
@@ -87,19 +109,288 @@
                 	<span class="share-btn-text">Google+</span>
                 </a>
 
-                <!-- Branded Reddit button -->
-                <a class="share-btn share-btn-branded share-btn-reddit"
-                   href="http://www.reddit.com/submit?url=https%3A%2F%2Fsocialshar.es"
-                   title="Share on Reddit+">
+                <!-- More button -->
+                <a class="share-btn share-btn-more"
+                   href="share.html?url=https%3A%2F%2Fsocialshar.es&title=socialshares&text=Lightweight share buttons for the web.&hide-services=twitter,facebook,googleplus"
+                   title="Share">
                 	<span class="share-btn-icon"></span>
-                	<span class="share-btn-text">Reddit</span>
+                	<span class="share-btn-text">Share</span>
                 </a>
 
             </div>
 
-            <main class="app-content">
+            <main class="app-content container">
 
-                <p>Great stuff is coming. For now, visit the original <a href="https://github.com/sunnysingh/share-buttons">GitHub project</a>.</p>
+                <div class="intro">
+
+                    <h2>Make sharing fast and secure.</h2>
+
+                    <p class="intro lead">While it's very easy to copy-and-paste scripts to embed a tweet or Facebook share button, you end up slowing down your site by loading resources from multiple servers. Also, these scripts violate privacy by tracking users even if they don't wish to use them. The good news is that social networks provide a way to share content through special URLs, which socialshares uses to give a lightweight and consistently-designed solution.</p>
+
+                    <p>
+                        <a class="btn btn-primary" href="https://github.com/socialshares/buttons/archive/master.zip">
+                            <span class="fa fa-download"></span>
+                            Download socialshares
+                        </a>
+                        <a class="btn btn-default" href="https://github.com/socialshares/buttons">
+                            <span class="fa fa-github"></span>
+                            View project on GitHub
+                        </a>
+                    </p>
+
+                </div>
+
+                <hr />
+
+                <h2 id="demo" class="page-header">Demo</h2>
+
+                <p>You can <a href="http://codepen.io/sunnysingh/pen/OPxbgq">view the pen</a> on CodePen.</p>
+
+                <h2 id="installation" class="page-header">Installation</h2>
+
+                <p>You are free to simply <a href="https://github.com/socialshares/buttons/archive/master.zip">download a ZIP</a> of the project. You can also install through <a href="http://bower.io/">Bower</a>:</p>
+
+                <p>
+                    <pre><code class="language-bash">bower install socialshares</code></pre>
+                </p>
+
+                <p>You then need to include the CSS and JavaScript:</p>
+
+                <p>
+                    <pre><code class="language-markup">&lt;!-- Make sure to edit the file paths as needed -->
+&lt;link rel="stylesheet" href="socialshares/build/css/buttons.css" />
+&lt;script src="socialshares/build/js/buttons.js">&lt;/script></code></pre>
+                </p>
+
+                <p>If you are using jQuery, you can use the following JavaScript file instead:</p>
+
+                <p>
+                    <pre><code class="language-markup">&lt;script src="socialshares/build/js/buttons.jquery.js">&lt;/script></code></pre>
+                </p>
+
+                <p>You are now ready to use socialshares.</p>
+
+                <h2 id="usage" class="page-header">Usage</h2>
+
+                <p>To show a share button, use the following markup:</p>
+
+                <p>
+                    <pre><code class="language-markup">&lt;!-- Default share button -->
+&lt;a class="share-btn share-btn-{SHARE_SERVICE}" href="{SHARE_URL}">
+    &lt;!-- Share icon -->
+    &lt;span class="share-btn-icon">&lt;/span>
+    &lt;!-- Share text -->
+    &lt;span class="share-btn-text">Share&lt;/span>
+&lt;/a></code></pre>
+                </p>
+
+                <p>As you might notice, it is simply an <code>&lt;a></code> tag with classes that socialshares can style and make functionable.</p>
+
+                <h3 id="share-services">Share Services and URLs</h3>
+
+                <p>You will need to change the <code>{SHARE_SERVICE}</code> and <code>{SHARE_URL}</code> depending on whether you want a tweet button, Facebook share button, etc. Each service has its own URL that allows you to pass parameters such as the page that you want to share.</p>
+
+                <ul>
+                    <li>
+                        Twitter
+                        <ul>
+                            <li>Service: <code>twitter</code></li>
+                            <li>URL: <code>https://twitter.com/share?url=</code></li>
+                            <li><a href="https://dev.twitter.com/web/tweet-button/web-intent">Documentation for extra parameters</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Facebook
+                        <ul>
+                            <li>Service: <code>facebook</code></li>
+                            <li>URL: <code>https://www.facebook.com/sharer/sharer.php?u=</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Google+
+                        <ul>
+                            <li>Service: <code>googleplus</code></li>
+                            <li>URL: <code>https://plus.google.com/share?url=</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Reddit
+                        <ul>
+                            <li>Service: <code>reddit</code></li>
+                            <li>URL: <code>https://www.reddit.com/submit?url=</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Tumblr
+                        <ul>
+                            <li>Service: <code>tumblr</code></li>
+                            <li>URL: <code>https://www.tumblr.com/share/link?url=</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        LinkedIn
+                        <ul>
+                            <li>Service: <code>linkedin</code></li>
+                            <li>URL: <code>https://www.linkedin.com/shareArticle?mini=true&url=</code></li>
+                            <li><a href="https://developer.linkedin.com/docs/share-on-linkedin">Documentation for extra parameters</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Pinterest
+                        <ul>
+                            <li>Service: <code>pinterest</code></li>
+                            <li>URL: <code>https://www.pinterest.com/pin/create/button/?url=</code></li>
+                            <li><a href="https://developers.pinterest.com/pin_it/">Documentation for extra parameters</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Delicious
+                        <ul>
+                            <li>Service: <code>delicious</code></li>
+                            <li>URL: <code>https://delicious.com/save?v=5&noui&jump=close&url=</code></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p>You can place the URL of the page that you want to share after the <code>url=</code> and <code>u=</code> parameters, but make sure that it is encoded. You can use the <a href="http://devotter.com/uri-encoder">Online URI Encoder</a> tool to do so.</p>
+
+                <p><strong>Example</strong>: Let's create a tweet button.</p>
+
+                <p>
+                    <!-- Twitter button -->
+                    <a class="share-btn share-btn-twitter"
+                       href="https://twitter.com/share?url=https%3A%2F%2Fsocialshar.es"
+                       title="Share on Twitter">
+                        <span class="share-btn-icon"></span>
+                        <span class="share-btn-text">Tweet</span>
+                    </a>
+                </p>
+
+                <p>
+                    <pre><code class="language-markup">&lt;!-- Tweet button -->
+&lt;a class="share-btn share-btn-twitter" href="https://twitter.com/share?url=https%3A%2F%2Fsocialshar.es%2F">
+    &lt;!-- Share icon -->
+    &lt;span class="share-btn-icon">&lt;/span>
+    &lt;!-- Share text -->
+    &lt;span class="share-btn-text">Tweet&lt;/span>
+&lt;/a></code></pre>
+                </p>
+
+                <h3 id="branded-buttons">Branded (colorized) Buttons</h3>
+
+                <p>You may want to show a button with the service's brand color (e.g. blue tweet button, red Google+ button). You can do so by adding a <code>share-btn-branded</code> class to the <code>&lt;a></code> tag.</p>
+
+                <p>
+                    <!-- Branded Twitter button -->
+                    <a class="share-btn share-btn-branded share-btn-twitter"
+                       href="https://twitter.com/share?url=https%3A%2F%2Fsocialshar.es"
+                       title="Share on Twitter">
+                    	<span class="share-btn-icon"></span>
+                    	<span class="share-btn-text">Tweet</span>
+                    </a>
+                </p>
+
+                <p>
+                    <pre><code class="language-markup">&lt;!-- Branded Tweet button -->
+&lt;a class="share-btn share-btn-twitter share-btn-branded" href="https://twitter.com/share?url=https%3A%2F%2Fsocialshar.es%2F">
+    ...
+&lt;/a></code></pre>
+                </p>
+
+                <h3 id="dark-schemed-buttons">Dark-schemed Buttons</h3>
+
+                <p>Alternatively, you can create buttons with a dark-gray color by adding a <code>share-btn-inverse</code> class to the <code>&lt;a></code> tag.</p>
+
+                <p>
+                    <!-- Inverse Twitter button -->
+                    <a class="share-btn share-btn-inverse share-btn-twitter"
+                       href="https://twitter.com/share?url=https%3A%2F%2Fsocialshar.es"
+                       title="Share on Twitter">
+                    	<span class="share-btn-icon"></span>
+                    	<span class="share-btn-text">Tweet</span>
+                    </a>
+                </p>
+
+                <p>
+                    <pre><code class="language-markup">&lt;!-- Dark Tweet button -->
+&lt;a class="share-btn share-btn-twitter share-btn-inverse" href="https://twitter.com/share?url=https%3A%2F%2Fsocialshar.es%2F">
+    ...
+&lt;/a></code></pre>
+                </p>
+
+                <h3 id="button-sizes">Small or Large Buttons</h3>
+
+                <p>By default, the button is shown at a medium size. You can create a small or large button by adding a <code>share-btn-sm</code> or <code>share-btn-lg</code> class to the <code>&lt;a></code> tag.</p>
+
+                <p>
+                    <!-- Small Twitter button -->
+                    <a class="share-btn share-btn-sm share-btn-twitter"
+                       href="https://twitter.com/share?url=https%3A%2F%2Fsocialshar.es"
+                       title="Share on Twitter">
+                    	<span class="share-btn-icon"></span>
+                    	<span class="share-btn-text">Tweet</span>
+                    </a>
+                    <!-- Large Twitter button -->
+                    <a class="share-btn share-btn-lg share-btn-twitter"
+                       href="https://twitter.com/share?url=https%3A%2F%2Fsocialshar.es"
+                       title="Share on Twitter">
+                        <span class="share-btn-icon"></span>
+                        <span class="share-btn-text">Tweet</span>
+                    </a>
+                </p>
+
+                <p>
+                    <pre><code class="language-markup">&lt;!-- Small Tweet button -->
+&lt;a class="share-btn share-btn-twitter share-btn-sm" href="https://twitter.com/share?url=https%3A%2F%2Fsocialshar.es%2F">
+    ...
+&lt;/a>
+
+&lt;!-- Large Tweet button -->
+&lt;a class="share-btn share-btn-twitter share-btn-lg" href="https://twitter.com/share?url=https%3A%2F%2Fsocialshar.es%2F">
+    ...
+&lt;/a></code></pre>
+                </p>
+
+                <h2 id="showcase">Showcase</h2>
+
+                <div class="list-group">
+                    <a class="list-group-item" href="http://digitalbounds.com/">DigitalBounds</a>
+                    <a class="list-group-item" href="https://ninjality.com/blog">Ninjality Blog</a>
+                    <a class="list-group-item" href="https://sunnyis.me/blog">Sunny Singh's blog</a>
+                </div>
+
+                <p>Are you using socialshares? <a href="https://github.com/socialshares/buttons/issues/new">Open an issue</a> with the <code>showcase</code> label and we'll add you!</p>
+
+                <h2 id="browser-support">Browser Support</h2>
+
+                <p>Tested on all modern browsers, including IE 9+. There are slight alignment issues in mobile browsers, which will be fixed in a future version.</p>
+
+                <h2 id="changelog">Changelog</h2>
+
+                <ul>
+                    <li><span class="label label-primary">v1</span> Jul 29, 2015 - First release!</li>
+                </ul>
+
+                <p>This project has been rebranded can be originally found under <a href="https://github.com/sunnysingh/share-buttons">sunnysingh/share-buttons</a>.</p>
+
+                <h2 id="roadmap">Roadmap</h2>
+
+                <p>We want to make socialshares as awesome as possible! What's planned:</p>
+
+                <ul>
+                    <li>Fix cross-browser rendering issues (possible rewrite).</li>
+                    <li>Share Counts</li>
+                    <li><code>data-</code> attributes for configuration (will require JavaScript).</li>
+                    <li>SVG icons.</li>
+                    <li>Responsive (mixin, docs, or built-in).</li>
+                    <li>Add PostCSS and/or Sass support.</li>
+                    <li>Distribute CSS/JS over GitHub Pages or a CDN.</li>
+                    <li>Button builder UI.</li>
+                </ul>
+
+                <h2 id="issues">Issues</h2>
+
+                <p>You can <a href="https://github.com/socialshares/buttons/issues/new">open an issue</a> through GitHub.</p>
 
             </main>
 
@@ -110,14 +401,50 @@
                     <iframe src="https://ghbtns.com/github-btn.html?user=socialshares&repo=buttons&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="120px" height="30px"></iframe>
                 </div>
 
-                <p class="attributions">socialshares © 2015 | Open sourced on <a href="https://github.com/socialshares/buttons">GitHub</a> | Code licensed under <a href="http://opensource.org/licenses/MIT">MIT</a> | Created with <span class="glyphicon glyphicon-heart"></span><span class="sr-only">love</span> by <a href="https://sunnyis.me/">Sunny Singh</a></a>
+                <p class="attributions">Open sourced on <a href="https://github.com/socialshares/buttons">GitHub</a> | Code licensed under <a href="http://opensource.org/licenses/MIT">MIT</a> | Created by the ninjas at <a href="https://ninjality.com/">Ninjality</a></p>
 
             </footer>
 
         </div>
 
         <!-- JS -->
-        <script src="bower_components/share-buttons/build/js/share-buttons.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <!-- TODO: Upgrade to socialshares -->
+        <script src="bower_components/share-buttons/build/js/share-buttons.jquery.js"></script>
+        <script src="bower_components/anchor-js/anchor.js"></script>
+        <script src="assets/prism/prism.js"></script>
+        <script>
+        anchors.add();
+
+        // Smooth Scroll
+        $('a[href*=#]').on('click', function(event) {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+                var hash   = this.hash,
+                    target = $(hash);
+
+                if (target.length) {
+
+                    event.preventDefault();
+
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+
+                } else {
+
+                    event.preventDefault();
+
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 1000);
+
+                }
+
+            }
+        });
+        </script>
 
     </body>
 
