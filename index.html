@@ -123,7 +123,7 @@
 
                 <div class="intro">
 
-                    <h2>Make sharing fast and secure.</h2>
+                    <h2 class="no-anchor">Make sharing fast and secure.</h2>
 
                     <p class="intro lead">While it's very easy to copy-and-paste scripts to embed a tweet or Facebook share button, you end up slowing down your site by loading resources from multiple servers. Also, these scripts violate privacy by tracking users even if they don't wish to use them. The good news is that social networks provide a way to share content through special URLs, which socialshares uses to give a lightweight and consistently-designed solution.</p>
 
@@ -416,9 +416,10 @@
         <script src="assets/prism/prism.js"></script>
         <script>
         anchors.add();
+        anchors.remove('.no-anchor');
 
         // Smooth Scroll
-        $('a[href*=#]').on('click', function(event) {
+        $('.app-toc a').on('click', function(event) {
             if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 
                 var hash   = this.hash,
