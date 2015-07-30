@@ -128,9 +128,9 @@
                     <p class="intro lead">While it's very easy to copy-and-paste scripts to embed a tweet or Facebook share button, you end up slowing down your site by loading resources from multiple servers. Also, these scripts violate privacy by tracking users even if they don't wish to use them. The good news is that social networks provide a way to share content through special URLs, which socialshares uses to give a lightweight and consistently-designed solution.</p>
 
                     <p>
-                        <a class="btn btn-primary" href="https://github.com/socialshares/buttons/archive/master.zip">
-                            <span class="fa fa-download"></span>
-                            Download socialshares
+                        <a class="btn btn-primary smooth-scroll" href="#installation">
+                            <span class="fa fa-cloud-download"></span>
+                            Install socialshares
                         </a>
                         <a class="btn btn-default" href="https://github.com/socialshares/buttons">
                             <span class="fa fa-github"></span>
@@ -148,13 +148,18 @@
 
                 <h2 id="installation" class="page-header">Installation</h2>
 
-                <p>You are free to simply <a href="https://github.com/socialshares/buttons/archive/master.zip">download a ZIP</a> of the project. You can also install through <a href="http://bower.io/">Bower</a>:</p>
+                <p>There are multiple ways to install and start using socialshares (currently <code>v1.0.3</code>). Pick you preferred method.</p>
+
+                <h3>Download</h3>
 
                 <p>
-                    <pre><code class="language-bash">bower install socialshares</code></pre>
+                    <a class="btn btn-primary btn-sm" href="https://github.com/socialshares/buttons/archive/master.zip">
+                        <span class="fa fa-download"></span>
+                        Download a ZIP file
+                    </a>
                 </p>
 
-                <p>You then need to include the CSS and JavaScript:</p>
+                <p>Once downloaded and uncompressed, you can reference the CSS and JavaScript files in your project:</p>
 
                 <p>
                     <pre><code class="language-markup">&lt;!-- Make sure to edit the file paths as needed -->
@@ -162,13 +167,24 @@
 &lt;script src="socialshares/build/js/buttons.js">&lt;/script></code></pre>
                 </p>
 
-                <p>If you are using jQuery, you can use the following JavaScript file instead:</p>
+                <h3>Bower</h3>
 
                 <p>
-                    <pre><code class="language-markup">&lt;script src="socialshares/build/js/buttons.jquery.js">&lt;/script></code></pre>
+                    <pre><code class="language-bash">bower install socialshares</code></pre>
                 </p>
 
-                <p>You are now ready to use socialshares.</p>
+                <h3>CDN</h3>
+
+                <p>You can easily hotlink the files from the awesome <a href="https://rawgit.com/">RawGit</a> CDN.</p>
+
+                <p>
+                    <pre><code class="language-markup">&lt;link rel="stylesheet" href="https://cdn.rawgit.com/socialshares/buttons/v1.0.3/build/css/buttons.css" />
+&lt;script src="https://cdn.rawgit.com/socialshares/buttons/v1.0.3/build/js/buttons.js">&lt;/script></code></pre>
+                </p>
+
+                <hr />
+
+                <p>If you are using jQuery, you can replace <code>buttons.js</code> with <code>buttons.jquery.js</code>.</p>
 
                 <h2 id="usage" class="page-header">Usage</h2>
 
@@ -367,11 +383,13 @@
 
                 <h2 id="changelog">Changelog</h2>
 
+                <p>You can subscribe to release updates on <a href="https://libraries.io/bower/socialshares">Libraries</a>.</p>
+
                 <ul>
                     <li><span class="label label-primary">v1</span> Jul 29, 2015 - First release!</li>
                 </ul>
 
-                <p>This project has been rebranded can be originally found under <a href="https://github.com/sunnysingh/share-buttons">sunnysingh/share-buttons</a>.</p>
+                <p>This project has been rebranded and can be originally found under <a href="https://github.com/sunnysingh/share-buttons">sunnysingh/share-buttons</a>.</p>
 
                 <h2 id="roadmap">Roadmap</h2>
 
@@ -419,7 +437,7 @@
         anchors.remove('.no-anchor');
 
         // Smooth Scroll
-        $('.app-toc a').on('click', function(event) {
+        $('.app-toc a, .smooth-scroll').on('click', function(event) {
             if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 
                 var hash   = this.hash,
