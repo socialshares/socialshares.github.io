@@ -1,0 +1,43 @@
+{
+  "name": "minigrid",
+  "main": "index.js",
+  "version": "1.6.0",
+  "homepage": "http://alves.im/minigrid",
+  "authors": [
+    "Henrique Alves <henriquea@gmail.com>"
+  ],
+  "description": "Minimal 2kb zero dependency cascading grid layout",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "layout",
+    "grid",
+    "min",
+    "mini",
+    "minigrid",
+    "minimal",
+    "javascript",
+    "responsive"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.6.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.6.0",
+    "commit": "031a8835569ca3f6186d035263113e4fc48d1fe0"
+  },
+  "_source": "git://github.com/henriquea/minigrid.git",
+  "_target": "~1.6.0",
+  "_originalSource": "minigrid",
+  "_direct": true
+}

@@ -1,10 +1,10 @@
 {
-  "name": "share-buttons",
-  "version": "1.0.1",
-  "homepage": "https://github.com/sunnysingh/share-buttons",
+  "name": "socialshares",
+  "version": "1.0.4",
+  "homepage": "https://github.com/socialshares/buttons",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sunnysingh/share-buttons.git"
+    "url": "git://github.com/socialshares/buttons.git"
   },
   "authors": [
     "Sunny Singh <sunny@sunnyis.me>"
@@ -25,14 +25,14 @@
     "test",
     "tests"
   ],
-  "_release": "1.0.1",
+  "_release": "1.0.4",
   "_resolution": {
     "type": "version",
-    "tag": "v1.0.1",
-    "commit": "38b8ee374df01ecb2146a874cfe424ced902ecdf"
+    "tag": "v1.0.4",
+    "commit": "dbff888907c2978d1a8b430cd4d892889f9203ac"
   },
-  "_source": "git://github.com/sunnysingh/share-buttons.git",
-  "_target": "~1.0.1",
-  "_originalSource": "share-buttons",
+  "_source": "git://github.com/socialshares/buttons.git",
+  "_target": "~1.0.4",
+  "_originalSource": "socialshares",
   "_direct": true
 }

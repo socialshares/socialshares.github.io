@@ -15,5 +15,9 @@
   ],
   "devDependencies": {
     "normalize.css": "~3.0.3"
+  },
+  "dependencies": {
+    "minigrid": "~1.6.0",
+    "socialshares": "~1.0.4"
   }
 }

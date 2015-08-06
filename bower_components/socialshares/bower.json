@@ -1,10 +1,10 @@
 {
-  "name": "share-buttons",
+  "name": "socialshares",
   "version": "1.0.0",
-  "homepage": "https://github.com/sunnysingh/share-buttons",
+  "homepage": "https://github.com/socialshares/buttons",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sunnysingh/share-buttons.git"
+    "url": "git://github.com/socialshares/buttons.git"
   },
   "authors": [
     "Sunny Singh <sunny@sunnyis.me>"

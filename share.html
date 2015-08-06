@@ -17,7 +17,7 @@
         <meta name="robots" content="noindex" />
 
         <!-- CSS -->
-        <!-- TODO: Minify and concat all assets -->
+        <!-- TODO: Minify and concat -->
         <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
         <link rel="stylesheet" href="assets/stackicons/css/stackicons-social.min.css" />
         <style>
@@ -35,15 +35,25 @@
             height: 100%;
             background: #fff;
         }
+
         .services {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
             display: flex;
             width: 100%;
             height: 100%;
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+                -ms-flex-align: center;
+                    align-items: center;
         }
         .services ul {
-            margin: 0;
+            margin: 0 auto;
             padding: 0;
             width: 100%;
             height: 100%;
@@ -98,13 +108,21 @@
             </ul>
         </div>
 
+        <!-- TODO: Minify and concat -->
         <script src="assets/js/share.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
+        <script src="bower_components/minigrid/minigrid.min.js"></script>
         <script>
-        var msnry = new Masonry('.services-list', {
-            itemSelector:       '.services-item',
-            isFitWidth:         true,
-            transitionDuration: 0
+        // Function for [re]drawing the grid
+        var servicesGrid = function() {
+            minigrid('.services-list', '.services-item');
+        };
+
+        // Initialize grid
+        servicesGrid();
+
+        // Redraw grid on resize
+        window.addEventListener('resize', function() {
+            servicesGrid();
         });
         </script>
 

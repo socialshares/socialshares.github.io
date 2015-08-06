@@ -1,0 +1,1 @@
+!function(){var e=document.querySelectorAll(".share-btn");e&&[].forEach.call(e,function(e){e.addEventListener("click",function(e){var n=650,t=450;e.preventDefault(),window.open(this.href,"Share Dialog","menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width="+n+",height="+t+",top="+(screen.height/2-t/2)+",left="+(screen.width/2-n/2))})})}();
