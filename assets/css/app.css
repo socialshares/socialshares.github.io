@@ -2,6 +2,12 @@ body {
     background: #f4f4f4;
 }
 
+.old-version-notice {
+    margin-top: 60px;
+    padding: 15px;
+    text-align: center;
+}
+
 .app-toc {
     position: fixed;
     top: 15px;
